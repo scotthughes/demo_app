@@ -1,0 +1,29 @@
+<h1>Listing mocroposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mocroposts.each do |mocropost| %>
+      <tr>
+        <td><%= mocropost.content %></td>
+        <td><%= mocropost.user_id %></td>
+        <td><%= link_to 'Show', mocropost %></td>
+        <td><%= link_to 'Edit', edit_mocropost_path(mocropost) %></td>
+        <td><%= link_to 'Destroy', mocropost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mocropost', new_mocropost_path %>
